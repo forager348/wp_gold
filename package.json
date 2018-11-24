@@ -1,0 +1,27 @@
+{
+  "name": "wp_gold",
+  "version": "1.0.0",
+  "description": "WordPress Gold theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forager348/wp_gold.git"
+  },
+  "keywords": [
+    "WordPress",
+    "JavaScript",
+    "CSS"
+  ],
+  "author": "forager348",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forager348/wp_gold/issues"
+  },
+  "homepage": "https://github.com/forager348/wp_gold#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
