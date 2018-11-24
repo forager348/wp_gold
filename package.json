@@ -4,7 +4,9 @@
   "description": "WordPress Gold theme",
   "main": "index.js",
   "scripts": {
-    "test": "karma test"
+    "sass": "gulp sass",
+    "test": "karma test",
+    "useref": "gulp useref"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,14 @@
     "gulp": "^4.0.0"
   },
   "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-useref": "^3.1.6",
     "lodash": ">=4.17.5",
     "minimatch": ">=3.0.2"
   }

@@ -1,3 +1,11 @@
-# NPM
+# NPM files
 
 /node_modules/
+
+# Deployable web files
+
+/public_html/
+
+# Compiled files
+
+/src/css/
