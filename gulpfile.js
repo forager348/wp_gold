@@ -16,50 +16,53 @@ var gulp = require('gulp'),
 /**
  * Transpile SASS to CSS
  */
-gulp.task('sass', () => {
-  return gulp.src('src/sass/*')
+gulp.task('sass', (done) => {
+  gulp.src('src/sass/*')
     .pipe(sass())
     .pipe(gulp.dest('src/css'));
+  done();
 });
 
 /**
  * Minify JS/CSS, copy HTML and move to deployables directory
  */
-gulp.task('useref', () => {
-  return gulp.src('src/*.html')
+gulp.task('useref', (done) => {
+  gulp.src('src/*.html')
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('public_html'));
+  done();
 });
 
 /**
  * Optimize images and move to deployables directory
  */
-gulp.task('images', () => {
-  return gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
+gulp.task('images', (done) => {
+  gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
     .pipe(cache(imagemin()))
     .pipe(gulp.dest('public_html/images'));
+  done();
 });
 
 /**
  * Copy fonts to deployables directory
  */
-gulp.task('fonts', () => {
-  return gulp.src('src/fonts/**/*')
+gulp.task('fonts', (done) => {
+  gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('public_html/fonts'));
+  done();
 });
 
 /**
  * Clean deployables directory
  */
-gulp.task('clean', () => {
-  return del.sync('public_html');
+gulp.task('clean', (done) => {
+  del.sync('public_html');
+  done();
 });
 
 /**
  * Build deployables
  */
-gulp.task('build', [`clean`, `sass`, `images`, `fonts`, `useref`], (async) => {
-  async();
-});
+gulp.task('build', gulp.series('clean', 'sass', 'images', 'fonts', 'useref'));

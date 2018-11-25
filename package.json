@@ -4,6 +4,10 @@
   "description": "WordPress Gold theme",
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "fonts": "gulp fonts",
+    "images": "gulp images",
     "sass": "gulp sass",
     "test": "karma test",
     "useref": "gulp useref"
